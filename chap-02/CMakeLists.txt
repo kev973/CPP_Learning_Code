@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 project(exoCours)
 
 add_executable(exoCours
-    1-first_class.cpp
+    2-constructor.cpp
 )
 
 target_compile_features(exoCours PUBLIC cxx_std_17)
