@@ -9,6 +9,11 @@ public:
         , _surname { surname }
     {}
 
+    ~Person()
+    {
+        std::cout << get_full_name() << " Died at " << _age << std::endl;
+    }
+
     std::string  get_full_name() const { return _name + " " + _surname; }
     unsigned int get_age() const { return _age; }
 
@@ -20,6 +25,18 @@ private:
     unsigned int _age = 0u;
 };
 
+class Batmobile
+{
+    public:
+        // ~Batmobile()
+        // {
+        //     std::cout << "La batmobile à été détruite" << std::endl;
+        // }
+
+    private:
+        Person _batman {"Bruce", "Wayne"};
+};
+
 int main()
 {
     {
@@ -28,5 +45,12 @@ int main()
     }
 
     std::cout << "After block" << std::endl;
+
+    {
+        Batmobile batmobile;
+    }
+
+    std::cout << "After block2" << std::endl;
+
     return 0;
 }
